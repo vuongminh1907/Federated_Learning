@@ -5,10 +5,6 @@ import numpy as np
 from torchvision import datasets, transforms
 
 def get_dataset(args):
-    """ Returns train and test datasets and a user group which is a dict where
-    the keys are the user index and the values are the corresponding data for
-    each of those users.
-    """
 
     data_dir = '../data/mnist/'
     apply_transform = transforms.Compose([
@@ -26,12 +22,6 @@ def get_dataset(args):
     return train_dataset, test_dataset, user_groups
 
 def mnist_iid(dataset, num_users):
-    """
-    Sample I.I.D. client data from MNIST dataset
-    :param dataset:
-    :param num_users:
-    :return: dict of image index
-    """
     num_items = int(len(dataset)/num_users)
     dict_users, all_idxs = {}, [i for i in range(len(dataset))]
     for i in range(num_users):
