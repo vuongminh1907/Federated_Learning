@@ -1,4 +1,3 @@
-# Federated_Learning
 # Requirement
 python=3.7.3
 pytorch=1.2.0
